@@ -1,0 +1,27 @@
+table{
+	border:1px solid #000;
+	border-collapse: collapse;
+	text-align: center;
+	font-size:12px;
+	margin-top:20px;
+	thead{
+		background:yellow;
+		font-weight:bold;
+	}
+	tbody{
+		background:#333;
+		color:#fff;
+	}
+	td{
+		width: 130px;
+		height: 30px;
+		border:1px solid #fff;
+		position:relative;
+		cursor: pointer;
+		span{
+			position:absolute;
+			right:8px;
+		}
+	}
+}
+		

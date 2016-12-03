@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./app/prd/styles/style.css">
+</head>
+<body>
+	<div ng-controller="democon">
+		<input type="text" ng-model="searchText" placeholder="search">
+		<table>
+			<thead>
+				<tr>
+					<td ng-click="firstClick()">FirstName<span ng-show="first" ng-if="i1">▼</span><span ng-hide="first" ng-if="i1">▲</span></td>
+					<td ng-click="lastClick()">LastName<span ng-show="last"  ng-if="i2">▼</span><span ng-hide="last" ng-if="i2">▲</span></td>
+					<td>Salary</td>
+					<td>Salary</td>
+					<td  ng-click="birClick()">Birthday<span ng-show="bir"  ng-if="i3">▼</span><span ng-hide="bir" ng-if="i3">▲</span></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="i in workers  |orderBy:value | filter:searchText">
+					<td>{{i.FirstName | uppercase}}</td>
+					<td>{{i.LastName | lowercase}}</td>
+					<td>{{i.Salary | currency:""}}</td>
+					<td>{{i.Salary | currency:"￥"}}</td>
+					<td>{{i.Birthday | date:"yyyy年MM月dd日"}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="./app/dist/scripts/angular.min.js"></script>
+	<script src="./app/dist/scripts/jquery-2.1.1.js"></script>
+	<script src="./app/dist/scripts/js.js"></script>
+	
+	
+</body>
+</html>
